@@ -20,9 +20,14 @@ public class ParkSlotServiceImpl implements ParkSlotService {
         if (model == null) {
             System.out.println("No vehicle that park in Parking lot.");
         } else {
-            System.out.format("%7s%7s%7s%7s%n", "Slot", "Reg. number", "Type", "Color");
+            System.out.format("%7s%15s%15s%15s%n", "Slot", "Reg. number", "Type", "Color");
             for (int i = 0; i < model.length; i++) {
-                System.out.format("%7s%7s%7s%7s%n", i+1, model[i].getRegNo(), model[i].getVehicleType(), model[i].getRegNoColor());
+
+                if (model[i] == null) {
+                    System.out.format("%7s%15s%15s%15s%n", i+1, "null", "null", "null");
+                } else {
+                    System.out.format("%7s%15s%15s%15s%n", i+1, model[i].getRegNo(), model[i].getVehicleType(), model[i].getRegNoColor());
+                }
             }
         }
     }
@@ -36,10 +41,14 @@ public class ParkSlotServiceImpl implements ParkSlotService {
     @Override
     public void park(String park) {
         String[] arrPark = park.split(" ");
-        ParkSlot parkSlot = new ParkSlot(arrPark[0], arrPark[1], arrPark[2]);
+        ParkSlot parkSlot = new ParkSlot(arrPark[0], arrPark[2], arrPark[1]);
         int slot = parkSlotRepository.park(parkSlot);
 
-        System.out.println("Allocated slot number: " + slot);
+        if (slot == 0) {
+            System.out.println("Sorry, parking lot is full");
+        } else {
+            System.out.println("Allocated slot number: " + slot);
+        }
     }
 
     @Override

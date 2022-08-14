@@ -35,7 +35,7 @@ public class ParkSlotRepositoryImpl implements ParkSlotRepository {
 
     @Override
     public boolean leave(Integer slotNo) {
-        if (slotNo < data.length) {
+        if (data.length < slotNo) {
             return false;
         } else if (data[slotNo - 1] == null) {
             return  false;
@@ -61,16 +61,13 @@ public class ParkSlotRepositoryImpl implements ParkSlotRepository {
     public List<String> getRegNoByPlate(String park) {
         List<String> listRegNo = new ArrayList<>();
 
-        String[] arrRegNo = park.split("_");
-        String sRegNo = arrRegNo[arrRegNo.length - 2];
-
         for (ParkSlot vehicle : data) {
             String[] stringVehicleRegNo = vehicle.getRegNo().split("-");
             int intVehicleRegNo = Integer.parseInt(stringVehicleRegNo[1]);
 
-            if (intVehicleRegNo % 2 == 0 && sRegNo.equals("even")) {
+            if (intVehicleRegNo % 2 == 0 && park.equals("even")) {
                 listRegNo.add(vehicle.getRegNo());
-            } else if (intVehicleRegNo % 2 == 1 && sRegNo.equals("odd")) {
+            } else if (intVehicleRegNo % 2 == 1 && park.equals("odd")) {
                 listRegNo.add(vehicle.getRegNo());
             }
         }
@@ -81,13 +78,10 @@ public class ParkSlotRepositoryImpl implements ParkSlotRepository {
     public List<String> getRegNoByColor(String park) {
         List<String> listRegNo = new ArrayList<>();
 
-        String[] arrColor = park.split(" ");
-        String sColor = arrColor[arrColor.length - 1];
-
         for (ParkSlot vehicle : data) {
             String stringVehicleColor = vehicle.getRegNoColor();
 
-            if (sColor.equals(stringVehicleColor)) {
+            if (park.equals(stringVehicleColor)) {
                 listRegNo.add(vehicle.getRegNo());
             }
         }
