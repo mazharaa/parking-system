@@ -39,9 +39,8 @@ public class ParkSlotServiceImpl implements ParkSlotService {
     }
 
     @Override
-    public void park(String park) {
-        String[] arrPark = park.split(" ");
-        ParkSlot parkSlot = new ParkSlot(arrPark[0], arrPark[2], arrPark[1]);
+    public void park(String regNo, String color, String type) {
+        ParkSlot parkSlot = new ParkSlot(regNo, type, color);
         int slot = parkSlotRepository.park(parkSlot);
 
         if (slot == 0) {
@@ -80,6 +79,7 @@ public class ParkSlotServiceImpl implements ParkSlotService {
                 System.out.print(listRegNo.get(i) + ", ");
             }
         }
+        System.out.println();
     }
 
     @Override
@@ -94,6 +94,7 @@ public class ParkSlotServiceImpl implements ParkSlotService {
                 System.out.print(listRegNo.get(i) + ", ");
             }
         }
+        System.out.println();
     }
 
     @Override
@@ -108,6 +109,7 @@ public class ParkSlotServiceImpl implements ParkSlotService {
                 System.out.print(listSlotNo.get(i) + ", ");
             }
         }
+        System.out.println();
     }
 
     @Override

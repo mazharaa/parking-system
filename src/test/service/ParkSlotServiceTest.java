@@ -1,4 +1,4 @@
-package test;
+package test.service;
 
 import repository.ParkSlotRepository;
 import repository.impl.ParkSlotRepositoryImpl;
@@ -22,13 +22,13 @@ public class ParkSlotServiceTest {
         ParkSlotService parkSlotService = new ParkSlotServiceImpl(parkSlotRepository);
 
         parkSlotService.createParkingLot(6);
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0001-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2701-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
-        parkSlotService.park("B-3241-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
+        parkSlotService.park("B-3241-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
     }
@@ -39,23 +39,23 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0001-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2701-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
-        parkSlotService.park("B-3241-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
+        parkSlotService.park("B-3241-ZZZ", "Hitam", "Motor");
 
         parkSlotService.leave(5);
 
         parkSlotService.getStatus();
 
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 
-        parkSlotService.park("B-4141-ZZZ Hitam Motor");
+        parkSlotService.park("B-4141-ZZZ", "Hitam", "Motor");
     }
 
     public static void testTotalEachType() {
@@ -64,12 +64,12 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0001-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2701-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 
@@ -86,12 +86,12 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0002-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2702-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 
@@ -109,12 +109,12 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0002-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2702-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 
@@ -140,12 +140,12 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0002-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2702-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 
@@ -172,12 +172,12 @@ public class ParkSlotServiceTest {
 
         parkSlotService.createParkingLot(6);
 
-        parkSlotService.park("B-1234-XYZ Putih Mobil");
-        parkSlotService.park("B-9999-XYZ Putih Motor");
-        parkSlotService.park("D-0002-HIJ Hitam Mobil");
-        parkSlotService.park("B-7777-DEF Merah Mobil");
-        parkSlotService.park("B-2702-XXX Biru Mobil");
-        parkSlotService.park("B-3141-ZZZ Hitam Motor");
+        parkSlotService.park("B-1234-XYZ", "Putih", "Mobil");
+        parkSlotService.park("B-9999-XYZ", "Putih", "Motor");
+        parkSlotService.park("D-0001-HIJ", "Hitam", "Mobil");
+        parkSlotService.park("B-7777-DEF", "Merah", "Mobil");
+        parkSlotService.park("B-2701-XXX", "Biru", "Mobil");
+        parkSlotService.park("B-3141-ZZZ", "Hitam", "Motor");
 
         parkSlotService.getStatus();
 

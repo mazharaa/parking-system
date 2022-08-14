@@ -8,7 +8,7 @@ public interface ParkSlotService {
     void createParkingLot(Integer totalSlot);
 
     //vehicle park to available parking slot
-    void park(String park);
+    void park(String regNo, String color, String type);
 
     //vehicle leaving parking slot
     void leave(Integer slotNo);
